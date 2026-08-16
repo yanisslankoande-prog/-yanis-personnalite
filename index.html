@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yanis avec 2 s</title>
+<style>
+body{font-family:Arial;text-align:center;background:#4f8fe8;color:white;padding:30px}
+.box{max-width:400px;margin:auto;background:#ffffff22;padding:25px;border-radius:20px}
+input,button{width:100%;padding:15px;margin:10px 0;border:0;border-radius:12px;font-size:17px}
+button{font-weight:bold;color:#3679d8}
+#r{display:none;text-align:left}
+</style>
+</head>
+<body>
+<div class="box">
+<div id="q">
+<h1>😈 Yanis avec 2 s</h1>
+<p>Découvre ta personnalité</p>
+<input id="n" placeholder="Entre ton prénom">
+<button onclick="v()">Vérifier 👇</button>
+</div>
+<div id="r">
+<h1 id="h"></h1>
+<p>Se moquer des gens : <b>99,9 % 😈</b></p>
+<p>Timide : <b>25 % 🤧</b></p>
+<p>Colère : <b>97 % 😡</b></p>
+<p>Aime l'argent : <b>300 % 💰</b></p>
+<p>Amour : <b>40 % ❤️</b></p>
+<h3>Réfléchissez avant de cliquer 👇</h3>
+</div>
+</div>
+<script>
+function v(){
+let n=document.getElementById("n").value.trim();
+if(!n)return alert("Entre ton prénom 😉");
+document.getElementById("q").style.display="none";
+document.getElementById("r").style.display="block";
+document.getElementById("h").textContent=n+", voilà ton résultat 😈";
+}
+</script>
+</body>
+</html>
