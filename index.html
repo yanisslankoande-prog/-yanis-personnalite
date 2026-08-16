@@ -1,43 +1,76 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Yanis avec 2 s</title>
-<style>
-body{font-family:Arial;text-align:center;background:#4f8fe8;color:white;padding:30px}
-.box{max-width:400px;margin:auto;background:#ffffff22;padding:25px;border-radius:20px}
-input,button{width:100%;padding:15px;margin:10px 0;border:0;border-radius:12px;font-size:17px}
-button{font-weight:bold;color:#3679d8}
-#r{display:none;text-align:left}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ton résultat 😈</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #6495ed;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+    }
+
+    .box {
+      width: 80%;
+      max-width: 600px;
+      background: rgba(255,255,255,0.12);
+      padding: 35px;
+      border-radius: 30px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 45px;
+    }
+
+    p {
+      font-size: 25px;
+      margin: 28px 0;
+    }
+
+    .warning {
+      font-weight: bold;
+      font-size: 28px;
+      margin-top: 45px;
+    }
+  </style>
 </head>
+
 <body>
-<div class="box">
-<div id="q">
-<h1>😈 Yanis avec 2 s</h1>
-<p>Découvre ta personnalité</p>
-<input id="n" placeholder="Entre ton prénom">
-<button onclick="v()">Vérifier 👇</button>
-</div>
-<div id="r">
-<h1 id="h"></h1>
-<p>Se moquer des gens : <b>99,9 % 😈</b></p>
-<p>Timide : <b>25 % 🤧</b></p>
-<p>Colère : <b>97 % 😡</b></p>
-<p>Aime l'argent : <b>300 % 💰</b></p>
-<p>Amour : <b>40 % ❤️</b></p>
-<h3>Réfléchissez avant de cliquer 👇</h3>
-</div>
-</div>
-<script>
-function v(){
-let n=document.getElementById("n").value.trim();
-if(!n)return alert("Entre ton prénom 😉");
-document.getElementById("q").style.display="none";
-document.getElementById("r").style.display="block";
-document.getElementById("h").textContent=n+", voilà ton résultat 😈";
-}
-</script>
+
+  <div class="box">
+    <h1>Yaniss, voilà<br>ton résultat 😈</h1>
+
+    <p>Se moquer des gens : <b id="moquer"></b> % 😈</p>
+    <p>Timide : <b id="timide"></b> % 🤣</p>
+    <p>Colère : <b id="colere"></b> % 😡</p>
+    <p>Aime l'argent : <b id="argent"></b> % 💰</p>
+    <p>Amour : <b id="amour"></b> % ❤️</p>
+
+    <div class="warning">
+      Réfléchissez avant de cliquer 👇
+    </div>
+  </div>
+
+  <script>
+    function hasard(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    document.getElementById("moquer").textContent = hasard(10, 100);
+    document.getElementById("timide").textContent = hasard(0, 100);
+    document.getElementById("colere").textContent = hasard(0, 100);
+    document.getElementById("argent").textContent = hasard(0, 300);
+    document.getElementById("amour").textContent = hasard(0, 100);
+  </script>
+
 </body>
 </html>
